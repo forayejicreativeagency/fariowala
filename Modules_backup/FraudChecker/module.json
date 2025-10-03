@@ -1,0 +1,15 @@
+﻿{
+    "name":  "FraudChecker",
+    "files":  [
+
+              ],
+    "alias":  "fraudchecker",
+    "priority":  0,
+    "description":  "FraudChecker module",
+    "providers":  [
+                      "Modules\\FraudChecker\\Providers\\FraudCheckerServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}

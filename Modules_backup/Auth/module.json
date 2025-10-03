@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Auth",
+    "files":  [
+
+              ],
+    "alias":  "auth",
+    "priority":  0,
+    "description":  "Auth module",
+    "providers":  [
+                      "Modules\\Auth\\Providers\\AuthServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}
