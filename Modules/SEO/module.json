@@ -1,0 +1,15 @@
+﻿{
+    "name":  "SEO",
+    "files":  [
+
+              ],
+    "alias":  "seo",
+    "priority":  0,
+    "description":  "SEO module",
+    "providers":  [
+                      "Modules\\SEO\\Providers\\SEOServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}

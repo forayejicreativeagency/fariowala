@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Analytics",
+    "files":  [
+
+              ],
+    "alias":  "analytics",
+    "priority":  0,
+    "description":  "Analytics module",
+    "providers":  [
+                      "Modules\\Analytics\\Providers\\AnalyticsServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}
