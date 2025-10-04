@@ -3,6 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Support\Http\Controllers\SupportController;
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified', 'check.module:Support'])->group(function () {
     Route::resource('supports', SupportController::class)->names('support');
 });

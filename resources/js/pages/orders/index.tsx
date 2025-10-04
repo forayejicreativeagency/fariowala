@@ -1,6 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { type BreadcrumbItem } from '@/types';
-import AppLayout from '@/layouts/app-layout';
+import AppLayout from '@/layouts/admin-layout';
 import {
     Card,
     CardContent,
@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingCart, Eye, Truck } from 'lucide-react';
+import AdminLayout from '@/layouts/admin-layout';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -58,7 +59,7 @@ const getStatusColor = (status: string) => {
 
 export default function OrdersIndex() {
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AdminLayout breadcrumbs={breadcrumbs}>
             <Head title="Orders" />
 
             <div className="space-y-6 p-4">
@@ -116,6 +117,6 @@ export default function OrdersIndex() {
                     </CardContent>
                 </Card>
             </div>
-        </AppLayout>
+        </AdminLayout>
     );
 }

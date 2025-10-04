@@ -220,11 +220,6 @@ const mainNavItems: NavGroup[] = [
                 href: '/dashboard/pages',
                 icon: Layout,
             },
-        ],
-    },
-    {
-        title: 'Account',
-        items: [
             {
                 title: 'Profile Settings',
                 href: '/settings/profile',
@@ -245,6 +240,53 @@ const mainNavItems: NavGroup[] = [
 ];
 
 export function AppSidebar() {
+    const { isPluginEnabled } = usePlugins();
+
+    // Helper to map nav item title to plugin id
+    const navItemToPluginId: Record<string, string> = {
+        'Analytics': 'analytics',
+        'Orders': 'orders',
+        'Cart Management': 'cart',
+        'Wishlist': 'wishlist',
+        'Products': 'products',
+        'Inventory': 'inventory',
+        'Categories': 'categories',
+        'Tags': 'tags',
+        'Attributes': 'attributes',
+        'Customers': 'customers',
+        'Users': 'users',
+        'Shipping': 'shipping',
+        'Payments': 'payments',
+        'Courier': 'courier',
+        'Fraud Protection': 'fraud',
+        'Discounts': 'discounts',
+        'Blog Management': 'blog',
+        'Newsletter': 'newsletter',
+        'SEO': 'seo',
+        'Support Center': 'support',
+        'Reviews': 'reviews',
+        'Plugins': 'plugins',
+        'System Settings': 'settings',
+        'Menu Builder': 'menu-builder',
+        'Page Builder': 'pages',
+        'Profile Settings': 'profile',
+        'Password': 'password',
+        'Appearance': 'appearance',
+    };
+
+    // Filter nav items by plugin status
+    const filteredNavItems = mainNavItems.map(group => ({
+        ...group,
+        items: group.items.filter(item => {
+            // Always show Plugins and System Settings menu items
+            if (item.title === 'Plugins' || item.title === 'System Settings') return true;
+            const pluginId = navItemToPluginId[item.title];
+            // If no plugin mapping, always show
+            if (!pluginId) return true;
+            return isPluginEnabled(pluginId);
+        })
+    })).filter(group => group.items.length > 0);
+
     return (
         <Sidebar collapsible="icon" variant="inset">
             <SidebarHeader>
@@ -260,7 +302,7 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
-                <NavMain items={mainNavItems} />
+                <NavMain items={filteredNavItems} />
             </SidebarContent>
 
             <SidebarFooter>

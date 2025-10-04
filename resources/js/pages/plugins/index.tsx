@@ -1,6 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { type BreadcrumbItem } from '@/types';
-import AppLayout from '@/layouts/app-layout';
+import AppLayout from '@/layouts/admin-layout';
 import {
     Card,
     CardContent,
@@ -49,10 +49,10 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-
-
 const categories = ['All', 'Core', 'Analytics', 'CRM', 'Finance', 'Logistics', 'Support', 'Marketing', 'Content', 'Security'];
 
+// Add the function component wrapper here
+export default function PluginsPage() {
     const { plugins, togglePlugin } = usePlugins();
     const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -68,10 +68,10 @@ const categories = ['All', 'Core', 'Analytics', 'CRM', 'Finance', 'Logistics', '
             <Head title="Plugins" />
             {/* Scoped style for toggle icon size */}
             <style>{`
-              [data-slot="button"] svg {
-                width: 40px;
-                height: 40px;
-              }
+                [data-slot="button"] svg {
+                    width: 40px;
+                    height: 40px;
+                }
             `}</style>
 
             <div className="space-y-6 p-4">
@@ -140,7 +140,7 @@ const categories = ['All', 'Core', 'Analytics', 'CRM', 'Finance', 'Logistics', '
                                     className={`${selectedCategory === category
                                         ? "bg-theme-blue hover:bg-theme-blue/90 text-white"
                                         : "hover:bg-hero-blue hover:text-theme-blue"
-                                    }`}
+                                        }`}
                                 >
                                     {category}
                                 </Button>
@@ -162,11 +162,10 @@ const categories = ['All', 'Core', 'Analytics', 'CRM', 'Finance', 'Logistics', '
                             {filteredPlugins.map((plugin) => (
                                 <div
                                     key={plugin.id}
-                                    className={`flex items-center justify-between p-4 border rounded-lg transition-all duration-200 ${
-                                        plugin.enabled
-                                            ? 'border-theme-green/30 bg-gray-light-solid/30'
-                                            : 'border-gray/50 bg-white hover:bg-gray/20'
-                                    }`}
+                                    className={`flex items-center justify-between p-4 border rounded-lg transition-all duration-200 ${plugin.enabled
+                                        ? 'border-theme-green/30 bg-gray-light-solid/30'
+                                        : 'border-gray/50 bg-white hover:bg-gray/20'
+                                        }`}
                                 >
                                     <div className="flex items-center space-x-4">
                                         <div className={`

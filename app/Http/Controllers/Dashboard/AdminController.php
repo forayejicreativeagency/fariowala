@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Services\AdminMenuService;
@@ -21,7 +21,7 @@ class AdminController extends Controller
      */
     public function dashboard(): Response
     {
-        return Inertia::render('admin/dashboard');
+        return Inertia::render('dashboard');
     }
 
     /**

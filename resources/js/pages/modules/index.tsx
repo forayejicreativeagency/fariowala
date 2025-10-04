@@ -1,6 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { type BreadcrumbItem } from '@/types';
-import AppLayout from '@/layouts/app-layout';
+import AppLayout from '@/layouts/admin-layout';
 import {
     Card,
     CardContent,
@@ -29,6 +29,7 @@ import {
     ToggleRight
 } from 'lucide-react';
 import { useState } from 'react';
+import AdminLayout from '@/layouts/admin-layout';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -177,7 +178,7 @@ export default function ModulesIndex() {
     const totalCount = modules.length;
 
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AdminLayout breadcrumbs={breadcrumbs}>
             <Head title="Module Manager" />
 
             <div className="space-y-6 p-4">
@@ -316,6 +317,6 @@ export default function ModulesIndex() {
                     </CardContent>
                 </Card>
             </div>
-        </AppLayout>
+        </AdminLayout>
     );
 }

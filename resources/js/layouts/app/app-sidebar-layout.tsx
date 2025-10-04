@@ -5,6 +5,7 @@ import { AppSidebarHeader } from '@/components/app-sidebar-header';
 import { CreditFooter } from '@/components/credit-footer';
 import { type BreadcrumbItem } from '@/types';
 import { type PropsWithChildren } from 'react';
+// import DynamicAdminSidebar from '@/components/dynamic-admin-sidebar';
 
 export default function AppSidebarLayout({
     children,

@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react';
-import AppLayout from '@/layouts/app-layout';
+import AdminLayout from '@/layouts/admin-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -432,7 +432,7 @@ export default function AnalyticsIndex() {
     };
 
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AdminLayout breadcrumbs={breadcrumbs}>
             <Head title="Analytics Dashboard" />
 
             <div className="p-5 space-y-6">
@@ -477,9 +477,8 @@ export default function AnalyticsIndex() {
                                             ) : (
                                                 <ArrowDownRight className="w-4 h-4 text-red-600" />
                                             )}
-                                            <span className={`text-sm font-medium ${
-                                                stat.trend === 'up' ? 'text-green-600' : 'text-red-600'
-                                            }`}>
+                                            <span className={`text-sm font-medium ${stat.trend === 'up' ? 'text-green-600' : 'text-red-600'
+                                                }`}>
                                                 {stat.change}
                                             </span>
                                             <span className="text-sm text-gray-500">{stat.description}</span>
@@ -509,9 +508,8 @@ export default function AnalyticsIndex() {
                                             ) : (
                                                 <ArrowDownRight className="w-4 h-4 text-red-600" />
                                             )}
-                                            <span className={`text-sm font-medium ${
-                                                metric.trend === 'up' ? 'text-green-600' : 'text-red-600'
-                                            }`}>
+                                            <span className={`text-sm font-medium ${metric.trend === 'up' ? 'text-green-600' : 'text-red-600'
+                                                }`}>
                                                 {metric.change}
                                             </span>
                                         </div>
@@ -548,9 +546,8 @@ export default function AnalyticsIndex() {
                                             <div className="flex items-start justify-between">
                                                 <div className="flex-grow">
                                                     <div className="flex items-center space-x-2">
-                                                        <div className={`w-2 h-2 rounded-full ${
-                                                            product.riskLevel === 'high' ? 'bg-red-500' : 'bg-yellow-500'
-                                                        }`}></div>
+                                                        <div className={`w-2 h-2 rounded-full ${product.riskLevel === 'high' ? 'bg-red-500' : 'bg-yellow-500'
+                                                            }`}></div>
                                                         <h4 className="font-medium text-gray-900 text-sm">{product.name}</h4>
                                                     </div>
                                                     <div className="mt-1 text-xs text-gray-600 space-y-1">
@@ -681,25 +678,22 @@ export default function AnalyticsIndex() {
                                 </div>
                                 <div className="space-y-3 max-h-80 overflow-y-auto">
                                     {lowStockAlerts.map((product, index) => (
-                                        <div key={index} className={`p-3 rounded-lg border-l-4 ${
-                                            product.urgencyLevel === 'critical' ? 'bg-red-50 border-l-red-500' :
+                                        <div key={index} className={`p-3 rounded-lg border-l-4 ${product.urgencyLevel === 'critical' ? 'bg-red-50 border-l-red-500' :
                                             product.urgencyLevel === 'high' ? 'bg-orange-50 border-l-orange-500' :
-                                            'bg-yellow-50 border-l-yellow-500'
-                                        }`}>
+                                                'bg-yellow-50 border-l-yellow-500'
+                                            }`}>
                                             <div className="flex items-start justify-between">
                                                 <div className="flex-grow">
                                                     <div className="flex items-center space-x-2">
-                                                        <div className={`w-2 h-2 rounded-full ${
-                                                            product.urgencyLevel === 'critical' ? 'bg-red-500' :
+                                                        <div className={`w-2 h-2 rounded-full ${product.urgencyLevel === 'critical' ? 'bg-red-500' :
                                                             product.urgencyLevel === 'high' ? 'bg-orange-500' :
-                                                            'bg-yellow-500'
-                                                        } animate-pulse`}></div>
+                                                                'bg-yellow-500'
+                                                            } animate-pulse`}></div>
                                                         <h4 className="font-medium text-gray-900 text-sm">{product.name}</h4>
-                                                        <span className={`text-xs px-1 py-0.5 rounded ${
-                                                            product.urgencyLevel === 'critical' ? 'bg-red-100 text-red-700' :
+                                                        <span className={`text-xs px-1 py-0.5 rounded ${product.urgencyLevel === 'critical' ? 'bg-red-100 text-red-700' :
                                                             product.urgencyLevel === 'high' ? 'bg-orange-100 text-orange-700' :
-                                                            'bg-yellow-100 text-yellow-700'
-                                                        }`}>
+                                                                'bg-yellow-100 text-yellow-700'
+                                                            }`}>
                                                             {product.urgencyLevel}
                                                         </span>
                                                     </div>
@@ -866,11 +860,10 @@ export default function AnalyticsIndex() {
                                                     <span className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">
                                                         {stock.category}
                                                     </span>
-                                                    <span className={`text-xs px-2 py-1 rounded ${
-                                                        stock.stockStatus === 'optimal' ? 'bg-green-100 text-green-700' :
+                                                    <span className={`text-xs px-2 py-1 rounded ${stock.stockStatus === 'optimal' ? 'bg-green-100 text-green-700' :
                                                         stock.stockStatus === 'high' ? 'bg-blue-100 text-blue-700' :
-                                                        'bg-red-100 text-red-700'
-                                                    }`}>
+                                                            'bg-red-100 text-red-700'
+                                                        }`}>
                                                         {stock.stockStatus}
                                                     </span>
                                                 </div>
@@ -1053,6 +1046,6 @@ export default function AnalyticsIndex() {
                     </Card>
                 </div>
             </div>
-        </AppLayout>
+        </AdminLayout>
     );
 }

@@ -1,7 +1,6 @@
 import { Head } from '@inertiajs/react';
 import { type BreadcrumbItem } from '@/types';
-import AppLayout from '@/layouts/app-layout';
-import { dashboard } from '@/routes';
+import AdminLayout from '@/layouts/admin-layout';
 import {
     Card,
     CardContent,
@@ -21,8 +20,8 @@ import {
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Dashboard',
-        href: dashboard().url,
+        title: 'Admin Dashboard',
+        href: '/admin/dashboard',
     },
 ];
 
@@ -89,16 +88,16 @@ const recentActivity = [
     },
 ];
 
-export default function Dashboard() {
+export default function AdminDashboard() {
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Dashboard" />
+        <AdminLayout breadcrumbs={breadcrumbs}>
+            <Head title="Admin Dashboard" />
 
-            <div className="space-y-6 p-4">
+            <div className="space-y-6">
                 {/* Welcome Section */}
                 <div className="space-y-2">
                     <h1 className="text-2xl font-bold tracking-tight">
-                        Welcome to Your Dashboard
+                        Welcome to Admin Dashboard
                     </h1>
                     <p className="text-muted-foreground">
                         Manage your e-commerce platform from here.
@@ -219,6 +218,6 @@ export default function Dashboard() {
                     </CardContent>
                 </Card>
             </div>
-        </AppLayout>
+        </AdminLayout>
     );
 }

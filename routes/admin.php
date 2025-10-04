@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Dashboard\AdminController;
 
 Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -10,7 +10,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     // Analytics Module
     Route::get('analytics', function () {
-        return Inertia::render('admin/analytics/index');
+        return Inertia::render('analytics/index');
     })->name('admin.analytics');
 
     // User Management
