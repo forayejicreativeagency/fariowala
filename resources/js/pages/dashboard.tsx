@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { type BreadcrumbItem } from '@/types';
 import AdminLayout from '@/layouts/admin-layout';
 import {
@@ -89,15 +89,19 @@ const recentActivity = [
 ];
 
 export default function AdminDashboard() {
+    const { auth } = usePage().props;
+    const currentUser = auth?.user;
     return (
         <AdminLayout breadcrumbs={breadcrumbs}>
             <Head title="Admin Dashboard" />
 
-            <div className="space-y-6">
+            <div className="space-y-6 p-[20px]">
                 {/* Welcome Section */}
                 <div className="space-y-2">
                     <h1 className="text-2xl font-bold tracking-tight">
-                        Welcome to Admin Dashboard
+                        {/* Show current user name */}
+                        Welcome back, {currentUser?.name}!
+
                     </h1>
                     <p className="text-muted-foreground">
                         Manage your e-commerce platform from here.

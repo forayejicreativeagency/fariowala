@@ -37,12 +37,12 @@ import {
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Admin Dashboard',
-        href: '/admin/dashboard',
+        title: 'Dashboard',
+        href: '/dashboard',
     },
     {
         title: 'Products',
-        href: '/admin/products',
+        href: '/products',
     },
 ];
 
@@ -93,9 +93,9 @@ const products = [
 export default function AdminProducts() {
     return (
         <AdminLayout breadcrumbs={breadcrumbs}>
-            <Head title="Admin - Products" />
+            <Head title="Products" />
 
-            <div className="space-y-6">
+            <div className="space-y-6 p-[20px]">
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div>

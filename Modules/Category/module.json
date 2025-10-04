@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Category",
+    "files":  [
+
+              ],
+    "alias":  "category",
+    "priority":  0,
+    "description":  "Category module",
+    "providers":  [
+                      "Modules\\Category\\Providers\\CategoryServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}

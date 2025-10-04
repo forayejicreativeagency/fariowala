@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Discount",
+    "files":  [
+
+              ],
+    "alias":  "discount",
+    "priority":  0,
+    "description":  "Discount module",
+    "providers":  [
+                      "Modules\\Discount\\Providers\\DiscountServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}

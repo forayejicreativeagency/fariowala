@@ -1,0 +1,15 @@
+﻿{
+    "name":  "Support",
+    "files":  [
+
+              ],
+    "alias":  "support",
+    "priority":  0,
+    "description":  "Support module",
+    "providers":  [
+                      "Modules\\Support\\Providers\\SupportServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}

@@ -1,0 +1,15 @@
+﻿{
+    "name":  "MenuBuilder",
+    "files":  [
+
+              ],
+    "alias":  "menubuilder",
+    "priority":  0,
+    "description":  "MenuBuilder module",
+    "providers":  [
+                      "Modules\\MenuBuilder\\Providers\\MenuBuilderServiceProvider"
+                  ],
+    "keywords":  [
+
+                 ]
+}
